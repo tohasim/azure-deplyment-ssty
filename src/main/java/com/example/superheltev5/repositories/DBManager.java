@@ -14,7 +14,7 @@ public class DBManager {
     public static Connection getConnection() {
         if (con != null) return con;
         String user = null, password = null, url = null;
-        url = "jdbc:sqlserver://tyss.database.windows.net:1433;databaseName=your_database_name";
+        url = "jdbc:sqlserver://tyss.database.windows.net;databaseName=superheroes";
         user = System.getenv("USERNAME");
         password = System.getenv("PASSWORD");
         try{
