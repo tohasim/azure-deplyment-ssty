@@ -11,18 +11,12 @@ import java.util.Properties;
 public class DBManager {
     private static Connection con = null;
 
-    public static Connection getConnection(){
+    public static Connection getConnection() {
         if (con != null) return con;
-        String user = null, password= null, url = null;
-        try (InputStream input = new FileInputStream("src/main/resources/application.properties")){
-            Properties properties = new Properties();
-            properties.load(input);
-            url = properties.getProperty("spring.datasource.url");
-            user = properties.getProperty("spring.datasource.username");
-            password = properties.getProperty("spring.datasource.password");
-        }catch(IOException ex){
-            ex.printStackTrace();
-        }
+        String user = null, password = null, url = null;
+        url = "jdbc:sqlserver://tyss.database.windows.net:1433;databaseName=your_database_name";
+        user = System.getenv("USERNAME");
+        password = System.getenv("PASSWORD");
         try{
             con = DriverManager.getConnection(url, user, password);
         } catch (SQLException e) {
