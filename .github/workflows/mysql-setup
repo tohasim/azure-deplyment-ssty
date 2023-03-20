@@ -12,8 +12,8 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      MYSQL_SERVER_NAME: your-mysql-server-name.mysql.database.azure.com
-      MYSQL_DATABASE_NAME: your-mysql-database-name
+      MYSQL_SERVER_NAME: tyss.database.windows.net
+      MYSQL_DATABASE_NAME: superheroes
       MYSQL_USERNAME: ${{ secrets.USERNAME }}
       MYSQL_PASSWORD: ${{ secrets.PASSWORD }}
 
